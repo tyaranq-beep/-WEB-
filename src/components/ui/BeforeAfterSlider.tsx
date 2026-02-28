@@ -68,8 +68,8 @@ export default function BeforeAfterSlider({
             </div>
 
             <div
-                className="absolute inset-0 h-full overflow-hidden"
-                style={{ width: `${sliderPos}%` }}
+                className="absolute inset-0 h-full w-full pointer-events-none"
+                style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
             >
                 <Image
                     src={beforeImage}
@@ -79,7 +79,7 @@ export default function BeforeAfterSlider({
                     sizes="(max-width: 768px) 100vw, 50vw"
                     priority // Before画像はLCP対象になる可能性が高いため付与
                 />
-                <div className="absolute top-4 left-4 bg-copper text-white px-3 py-1 text-sm font-bold z-10 shadow-md">
+                <div className="absolute top-4 left-4 bg-copper text-white px-3 py-1 text-sm font-bold z-10 shadow-md whitespace-nowrap">
                     {beforeLabel}
                 </div>
             </div>
