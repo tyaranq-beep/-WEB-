@@ -2,32 +2,50 @@
 
 @theme {
   --color-earth-900: #2C1E16;
-  /* Deep Brown */
   --color-earth-800: #4A3525;
   --color-earth-600: #8B5E3C;
   --color-earth-400: #C29A74;
   --color-earth-100: #F5EFEB;
-  /* Warm Beige */
 
   --color-forest-900: #1B3127;
   --color-forest-700: #2A4B3C;
-  /* Calming but solid Green */
   --color-forest-500: #4B7B62;
 
   --color-focus-red: #D22B2B;
-  /* Strongly grabs attention */
   --color-navy-alert: #1A365D;
-  /* Serious Navy */
+
+  /* ✨ Premium Accents */
+  --color-copper: #B87333;
+  --color-copper-light: #D4975A;
+  --color-gold-accent: #C6A35D;
 
   --font-serif: "Noto Serif JP", serif;
-  /* Heavy, traditional serif for authority */
   --font-sans: "Noto Sans JP", sans-serif;
-  /* Highly legible sans for details */
+  --font-display: "Cormorant Garamond", "Noto Serif JP", serif;
 }
 
 @layer base {
   body {
     @apply bg-earth-100 text-earth-900 font-sans antialiased text-base md:text-lg;
+    position: relative;
+  }
+
+  /* Premium noise texture overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+  }
+
+  /* Make all main content sit above the texture */
+  body>* {
+    position: relative;
+    z-index: 1;
   }
 
   h1,
@@ -40,12 +58,58 @@
 
 @layer utilities {
 
-  /* 影やぼかしを排除し、物理的なブロック感を出すクラス */
+  /* Solid construction card */
   .solid-card {
     @apply bg-white border-4 border-earth-900 shadow-[8px_8px_0px_#2C1E16];
   }
 
+  /* Copper-accent button */
   .solid-button {
-    @apply bg-earth-900 text-white font-bold px-6 py-3 border-b-4 border-black active:border-b-0 active:translate-y-1 transition-all;
+    @apply bg-earth-900 text-white font-bold px-6 py-3 border-b-4 border-[#8B5E3C] active:border-b-0 active:translate-y-1 transition-all;
+  }
+
+  /* Display font utility (Cormorant Garamond) */
+  .font-display {
+    font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+  }
+
+  /* Copper accent border */
+  .border-copper {
+    border-color: var(--color-copper);
+  }
+
+  /* Gold accent text */
+  .text-gold-accent {
+    color: var(--color-gold-accent);
+  }
+
+  /* ✨ Scroll Reveal Animation */
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Staggered delays for child elements */
+  .reveal-delay-100 {
+    transition-delay: 100ms;
+  }
+
+  .reveal-delay-200 {
+    transition-delay: 200ms;
+  }
+
+  .reveal-delay-300 {
+    transition-delay: 300ms;
+  }
+
+  .reveal-delay-500 {
+    transition-delay: 500ms;
   }
 }
