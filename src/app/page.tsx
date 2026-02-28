@@ -118,11 +118,11 @@ export default function Home() {
               {/* 指摘5: シニア層視点 - 小さすぎる text-xs を text-sm に、text-sm を text-base に引き上げ */}
               <div className="flex-1 border-l-4 border-copper pl-5">
                 <span className="block text-sm font-black text-earth-600 mb-1">施工エリア</span>
-                <span className="text-base font-black text-earth-900">〇〇市 〇〇様邸</span>
+                <span className="text-base font-black text-earth-900">〇〇市 Ｋ様邸</span>
               </div>
               <div className="flex-1 border-l-4 border-copper pl-5">
                 <span className="block text-sm font-black text-earth-600 mb-1">施工内容</span>
-                <span className="text-base font-black text-earth-900">外壁・屋根塗装</span>
+                <span className="text-base font-black text-earth-900">キッチン・LDKリフォーム</span>
               </div>
             </div>
           </div>
