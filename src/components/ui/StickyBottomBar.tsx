@@ -22,22 +22,28 @@ export default function StickyBottomBar() {
 
     return (
         <div
-            className={`fixed bottom-0 left-0 w-full z-50 md:hidden flex shadow-[0_-8px_30px_rgba(0,0,0,0.15)] transition-transform duration-500 ease-in-out ${isVisible ? 'translate-y-0' : 'translate-y-full'
+            className={`fixed bottom-0 left-0 w-full z-50 md:hidden flex shadow-[0_-8px_30px_rgba(0,0,0,0.15)] transition-transform duration-500 ease-in-out pb-safe ${isVisible ? 'translate-y-0' : 'translate-y-full'
                 }`}
         >
             <a
-                href="tel:0120-000-000"
-                className="flex-1 bg-stone-900 text-white flex flex-col items-center justify-center py-4 border-r border-stone-700 active:bg-stone-800 transition-colors"
+                href="tel:0120-XXX-XXX"
+                className="flex-[0.8] bg-stone-900 text-white flex flex-col items-center justify-center py-3 border-r border-stone-700 active:bg-stone-800 transition-colors"
             >
-                <Phone className="w-6 h-6 mb-1 text-copper" />
-                <span className="text-[11px] tracking-widest font-bold">電話ご相談</span>
+                <div className="bg-stone-800 text-[9px] px-2 py-0.5 rounded-sm text-stone-300 mb-1 font-bold">お急ぎの方</div>
+                <div className="flex items-center gap-1.5">
+                    <Phone className="w-5 h-5 text-copper gap-0" />
+                    <span className="text-sm font-black">電話相談</span>
+                </div>
             </a>
             <Link
                 href="/contact"
-                className="flex-1 bg-copper text-white flex flex-col items-center justify-center py-4 active:bg-[#a36528] transition-colors"
+                className="flex-[1.2] bg-copper text-white flex flex-col items-center justify-center py-3 active:bg-[#a36528] transition-colors relative overflow-hidden"
             >
-                <Mail className="w-6 h-6 mb-1 text-white" />
-                <span className="text-[11px] tracking-widest font-bold">無料お見積り</span>
+                <div className="text-[9px] font-bold tracking-wider mb-0.5 opacity-90">24時間受付・相談無料</div>
+                <div className="flex items-center gap-1.5">
+                    <Mail className="w-5 h-5" />
+                    <span className="text-base font-black tracking-wide">WEBお見積り</span>
+                </div>
             </Link>
         </div>
     );

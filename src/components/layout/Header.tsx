@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Phone, Menu, X, Mail } from 'lucide-react';
 
 export default function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -45,9 +46,10 @@ export default function Header() {
 
                     <div className="flex items-center gap-6 ml-4 border-l-2 border-earth-100 pl-6">
                         <div className="flex flex-col items-end">
-                            <span className="text-[10px] font-bold text-earth-800 bg-earth-100 px-2 py-1 mb-1">お電話でのご相談</span>
-                            <a href="tel:0120-XXX-XXX" className="text-xl font-black text-forest-700">
-                                📞 0120-XXX-XXX
+                            <span className="text-xs font-bold text-earth-800 bg-earth-100 px-2 py-1 mb-1">お電話でのご相談</span>
+                            <a href="tel:0120-XXX-XXX" className="text-xl font-black text-forest-700 flex items-center gap-2 lg:pointer-events-none lg:cursor-default">
+                                <Phone className="w-5 h-5" />
+                                0120-XXX-XXX
                             </a>
                         </div>
                         <Link
@@ -61,17 +63,21 @@ export default function Header() {
 
                 {/* Mobile Toggle */}
                 <button
-                    className="lg:hidden text-earth-900 p-2 font-bold bg-earth-100 border-2 border-earth-900"
+                    className="lg:hidden text-earth-900 px-3 py-2 font-bold bg-earth-100 border-2 border-earth-900 flex items-center gap-2"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     aria-label="メニュー"
                 >
-                    {isMobileMenuOpen ? '閉じる ✕' : 'メニュー ☰'}
+                    {isMobileMenuOpen ? (
+                        <><X className="w-5 h-5" /> 閉じる</>
+                    ) : (
+                        <><Menu className="w-5 h-5" /> メニュー</>
+                    )}
                 </button>
             </div>
 
             {/* Mobile Menu Overlay */}
             {isMobileMenuOpen && (
-                <div className="lg:hidden absolute top-full left-0 w-full bg-white border-b-4 border-earth-900 py-4 px-6 flex flex-col gap-4 shadow-xl">
+                <div className="lg:hidden fixed top-[76px] left-0 w-full h-[calc(100vh-76px)] overflow-y-auto bg-white border-b-4 border-earth-900 py-4 px-6 flex flex-col gap-4 shadow-xl z-40 pb-20">
                     {navLinks.map((item) => (
                         <Link
                             key={item.label}
@@ -86,14 +92,14 @@ export default function Header() {
                         href="tel:0120-XXX-XXX"
                         className="flex items-center justify-center gap-2 w-full py-4 mt-4 bg-earth-100 text-forest-700 font-black border-2 border-forest-700"
                     >
-                        📞 0120-XXX-XXX に電話する
+                        <Phone className="w-5 h-5" /> 0120-XXX-XXX に電話する
                     </a>
                     <Link
                         href="/contact"
-                        className="w-full py-4 bg-earth-900 text-white font-bold text-center border-b-4 border-black active:border-b-0 active:translate-y-1"
+                        className="flex items-center justify-center gap-2 w-full py-4 bg-earth-900 text-white font-bold text-center border-b-4 border-black active:border-b-0 active:translate-y-1"
                         onClick={() => setIsMobileMenuOpen(false)}
                     >
-                        無料お見積り・ご相談
+                        <Mail className="w-5 h-5" /> 無料お見積り・ご相談
                     </Link>
                 </div>
             )}

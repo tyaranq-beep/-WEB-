@@ -1,8 +1,9 @@
 import Link from 'next/link';
+import { Phone, Mail } from 'lucide-react';
 
 export default function Footer() {
     return (
-        <footer className="bg-earth-900 text-white pt-16 pb-24 lg:pb-8 border-t-8 border-forest-700">
+        <footer className="bg-earth-900 text-white pt-16 pb-12 lg:pb-8 border-t-8 border-forest-700">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 border-b-2 border-earth-800 pb-12">
                     {/* Logo & About */}
@@ -16,36 +17,23 @@ export default function Footer() {
 
                     <div className="bg-white text-earth-900 p-6 solid-card col-span-2 lg:col-span-2 border-2 border-earth-900 border-b-4 border-l-4">
                         <h3 className="text-xl font-bold mb-4 border-b-2 border-earth-800 pb-2">お問い合わせ</h3>
-                        <p className="text-forest-700 font-black text-3xl mb-2">📞 0120-XXX-XXX</p>
-                        <p className="text-sm font-bold text-earth-800 mb-6">
-                            営業時間：8:00〜19:00<br />
-                            定休日：日曜日（※緊急時はお電話ください）
+                        <p className="text-forest-700 font-black text-3xl mb-2 flex items-center gap-2 lg:pointer-events-none lg:cursor-default">
+                            <Phone className="w-7 h-7" /> 0120-XXX-XXX
                         </p>
-                        <Link href="/contact" className="block text-center bg-forest-700 text-white font-bold py-3 border-b-4 border-forest-900 active:border-b-0 active:translate-y-1 transition-all">
-                            24時間受付中 無料見積りはこちら
+                        <p className="text-sm font-bold text-earth-800 mb-6 leading-relaxed">
+                            <span className="block xl:inline">営業時間：8:00〜19:00</span>
+                            <span className="hidden xl:inline"> / </span>
+                            <span className="block xl:inline">定休日：日曜日（※緊急時はお電話ください）</span>
+                        </p>
+                        <Link href="/contact" className="flex justify-center items-center gap-2 bg-forest-700 text-white font-bold py-3 border-b-4 border-forest-900 active:border-b-0 active:translate-y-1 transition-all">
+                            <Mail className="w-5 h-5" /> 24時間受付中 無料見積りはこちら
                         </Link>
                     </div>
                 </div>
 
                 <div className="text-center text-earth-400 text-sm font-bold">
-                    <p>&copy; {new Date().getFullYear()} 〇〇工務店 All Rights Reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} 〇〇工務店 無断転載を禁じます。</p>
                 </div>
-            </div>
-
-            {/* Mobile Sticky CTA */}
-            <div className="fixed bottom-0 w-full bg-white border-t-4 border-earth-900 z-50 lg:hidden flex pb-safe shadow-[0_-4px_10px_rgba(0,0,0,0.1)]">
-                <a
-                    href="tel:0120-XXX-XXX"
-                    className="flex-1 flex flex-col items-center justify-center py-3 border-r-2 border-earth-400 active:bg-earth-100 transition-colors"
-                >
-                    <span className="text-lg font-bold text-forest-700">📞 お電話</span>
-                </a>
-                <Link
-                    href="/contact"
-                    className="flex-1 flex flex-col items-center justify-center py-3 bg-earth-900 active:bg-black transition-colors"
-                >
-                    <span className="text-lg font-bold text-white">✉️ 無料見積り</span>
-                </Link>
             </div>
         </footer>
     );
