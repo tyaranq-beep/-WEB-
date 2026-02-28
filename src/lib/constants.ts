@@ -4,16 +4,16 @@ export const IMAGES = {
         CEO: '/images/worker.png',
     },
     SERVICES: {
-        ROOF_BEFORE: '/images/wall-before.png',
-        ROOF_AFTER: '/images/wall-after.png',
+        ROOF_BEFORE: '/images/roof-before.png',
+        ROOF_AFTER: '/images/roof-after.png',
     },
     PROJECTS: {
-        WALL_BEFORE: '/images/house-before.png',
-        WALL_AFTER: '/images/house-after.png',
+        WALL_BEFORE: '/images/wall-before.png',
+        WALL_AFTER: '/images/wall-after.png',
     },
     BEFORE_AFTER: {
-        BEFORE_1: '/images/wall-before.png',
-        AFTER_1: '/images/wall-after.png',
+        BEFORE_1: '/images/kitchen-before.png',
+        AFTER_1: '/images/kitchen-after.png',
     },
     ABOUT: {
         WORKER: '/images/worker.png',
