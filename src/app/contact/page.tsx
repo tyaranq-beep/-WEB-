@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Phone } from 'lucide-react';
 import ContactForm from './ContactForm';
 
 export const metadata: Metadata = {
@@ -26,7 +27,9 @@ export default function ContactPage() {
                     <div className="lg:col-span-2 space-y-8">
                         <div className="solid-card bg-earth-100 p-8 border-l-8 border-l-forest-700">
                             <h2 className="text-2xl font-black text-earth-900 mb-4 border-b-2 border-earth-400 pb-2">お電話でのご相談</h2>
-                            <p className="text-forest-700 font-black text-3xl mb-4">📞 0120-XXX-XXX</p>
+                            <p className="text-forest-700 font-black text-3xl mb-4 flex items-center gap-2">
+                                <Phone className="w-8 h-8" /> 0120-XXX-XXX
+                            </p>
                             <p className="text-sm text-earth-900 font-bold bg-white p-3 border-2 border-earth-400">
                                 営業時間：8:00〜19:00<br />
                                 定休日：日曜日（※事前予約で対応可）

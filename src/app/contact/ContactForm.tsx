@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import { Mail } from 'lucide-react';
 
 export default function ContactForm() {
     const [formData, setFormData] = useState({
@@ -76,9 +77,9 @@ export default function ContactForm() {
 
             <button
                 type="submit"
-                className="w-full bg-forest-700 text-white font-black text-xl py-6 border-b-8 border-forest-900 active:border-b-0 active:translate-y-2 transition-all mt-4 hover:bg-forest-900"
+                className="w-full bg-forest-700 text-white font-black text-xl py-6 border-b-8 border-forest-900 active:border-b-0 active:translate-y-2 transition-all mt-4 hover:bg-forest-900 flex items-center justify-center gap-2"
             >
-                ✉️ この内容で送信する
+                <Mail className="w-6 h-6" /> この内容で送信する
             </button>
 
             <p className="text-sm text-center text-earth-900 font-bold mt-6 bg-earth-100 p-4 border-2 border-earth-400">

@@ -1,6 +1,7 @@
 import { getProjectsFromNotion } from '@/lib/notion';
 import RealImage from '@/components/ui/RealImage';
 import TrustBadges from '@/components/sections/TrustBadges';
+import { MessageCircle } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -50,7 +51,9 @@ export default async function ProjectsPage() {
                                 </div>
 
                                 <div className="bg-earth-100 p-5 border-l-8 border-focus-red">
-                                    <span className="text-earth-900 font-black text-sm block mb-2 tracking-widest border-b-2 border-earth-400 pb-1">🗣️ お客様の声</span>
+                                    <span className="text-earth-900 font-black text-sm mb-2 tracking-widest border-b-2 border-earth-400 pb-1 flex items-center gap-2">
+                                        <MessageCircle className="w-4 h-4" /> お客様の声
+                                    </span>
                                     <p className="text-earth-900 font-bold text-lg leading-relaxed">{project.customerVoice}</p>
                                 </div>
                             </div>

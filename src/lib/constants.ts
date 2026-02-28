@@ -1,21 +1,21 @@
 export const IMAGES = {
     HERO: {
-        MAIN: '/images/hero-main.jpg',
-        CEO: '/images/worker.jpg',
+        MAIN: '/images/hero-main.png',
+        CEO: '/images/worker.png',
     },
     SERVICES: {
-        ROOF_BEFORE: '/images/house-before.jpg',
-        ROOF_AFTER: '/images/house-after.jpg',
+        ROOF_BEFORE: '/images/wall-before.png',
+        ROOF_AFTER: '/images/wall-after.png',
     },
     PROJECTS: {
-        WALL_BEFORE: '/images/wall-before.jpg',
-        WALL_AFTER: '/images/wall-after.jpg',
+        WALL_BEFORE: '/images/house-before.png',
+        WALL_AFTER: '/images/house-after.png',
     },
     BEFORE_AFTER: {
-        BEFORE_1: '/images/house-before.jpg',
-        AFTER_1: '/images/house-after.jpg',
+        BEFORE_1: '/images/wall-before.png',
+        AFTER_1: '/images/wall-after.png',
     },
     ABOUT: {
-        WORKER: '/images/worker.jpg',
+        WORKER: '/images/worker.png',
     }
 } as const;
