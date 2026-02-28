@@ -1,26 +1,51 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-earth-900: #2C1E16;
+  /* Deep Brown */
+  --color-earth-800: #4A3525;
+  --color-earth-600: #8B5E3C;
+  --color-earth-400: #C29A74;
+  --color-earth-100: #F5EFEB;
+  /* Warm Beige */
+
+  --color-forest-900: #1B3127;
+  --color-forest-700: #2A4B3C;
+  /* Calming but solid Green */
+  --color-forest-500: #4B7B62;
+
+  --color-focus-red: #D22B2B;
+  /* Strongly grabs attention */
+  --color-navy-alert: #1A365D;
+  /* Serious Navy */
+
+  --font-serif: "Noto Serif JP", serif;
+  /* Heavy, traditional serif for authority */
+  --font-sans: "Noto Sans JP", sans-serif;
+  /* Highly legible sans for details */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  body {
+    @apply bg-earth-100 text-earth-900 font-sans antialiased text-base md:text-lg;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif text-earth-900 tracking-tight;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+
+  /* 影やぼかしを排除し、物理的なブロック感を出すクラス */
+  .solid-card {
+    @apply bg-white border-4 border-earth-900 shadow-[8px_8px_0px_#2C1E16];
+  }
+
+  .solid-button {
+    @apply bg-earth-900 text-white font-bold px-6 py-3 border-b-4 border-black active:border-b-0 active:translate-y-1 transition-all;
+  }
 }
