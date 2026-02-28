@@ -106,7 +106,7 @@ export default function Home() {
       <section className="py-24 border-t-8 border-earth-900 reveal-on-scroll">
         <div className="grid md:grid-cols-12 gap-12 lg:gap-16 items-center">
           <div className="md:col-span-5">
-            <span className="bg-stone-900 text-white px-5 py-2 font-bold text-sm mb-6 inline-block tracking-widest shadow-sm">CASE STUDY</span>
+            <span className="bg-stone-900 text-white px-5 py-2 font-bold text-sm mb-6 inline-block tracking-widest shadow-sm">施工事例</span>
             <h2 className="text-4xl md:text-6xl font-black text-earth-900 mb-8 leading-snug tracking-wide">
               劇的な変化を、<br />
               その目で確かめる。

@@ -63,7 +63,7 @@ export default function BeforeAfterSlider({
                 className="absolute inset-0 object-cover pointer-events-none"
                 sizes="(max-width: 768px) 100vw, 50vw"
             />
-            <div className="absolute top-4 right-4 bg-earth-900 text-white px-3 py-1 text-sm font-bold z-10 shadow-md">
+            <div className="absolute top-4 right-4 bg-earth-900 text-white px-3 py-1 text-sm font-bold z-10 shadow-md whitespace-nowrap min-w-max">
                 {afterLabel}
             </div>
 
@@ -79,7 +79,7 @@ export default function BeforeAfterSlider({
                     sizes="(max-width: 768px) 100vw, 50vw"
                     priority // Before画像はLCP対象になる可能性が高いため付与
                 />
-                <div className="absolute top-4 left-4 bg-copper text-white px-3 py-1 text-sm font-bold z-10 shadow-md whitespace-nowrap">
+                <div className="absolute top-4 left-4 bg-copper text-white px-3 py-1 text-sm font-bold z-10 shadow-md whitespace-nowrap min-w-max">
                     {beforeLabel}
                 </div>
             </div>
